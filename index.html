@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ali Arfa - AI Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --accent-color: #38bdf8;
+      --text-color: #f1f5f9;
+      --muted-color: #94a3b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: var(--muted-color);
+    }
+
+    section {
+      padding: 2rem 4rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    ul li::before {
+      content: "▹";
+      color: var(--accent-color);
+      margin-right: 0.5rem;
+    }
+
+    .socials {
+      margin-top: 1rem;
+    }
+
+    .socials a {
+      margin: 0 0.5rem;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #facc15;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 1rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ali Arfa</h1>
+    <p>AI Engineer | Edge Computing | Full Stack Dev</p>
+    <div class="socials">
+      <a href="https://github.com/aliarfa" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/aliarfa" target="_blank">LinkedIn</a>
+      <a href="mailto:aliarfa@example.com">Email</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a passionate AI and Edge Computing researcher working on real-time embedded systems like the Enhanced Driver Assist (EDA) system. I enjoy building useful tech products and solving real-world problems with code and creativity.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Python, JavaScript, C++</li>
+      <li>TensorFlow, OpenCV, Flask</li>
+      <li>Embedded Systems, Raspberry Pi, Coral TPU</li>
+      <li>Git, Docker, REST APIs</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Enhanced Driver Assist (EDA):</strong> Road safety system using CV + OBD</li>
+      <li><strong>Mulazmat.ai:</strong> AI-powered recruitment platform</li>
+      <li><strong>RAG-PDF Chatbot:</strong> Custom chatbot with search + generation</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email me at <a href="mailto:aliarfa@example.com" style="color: var(--accent-color);">aliarfa@example.com</a></p>
+  </section>
+
+</body>
+</html>
