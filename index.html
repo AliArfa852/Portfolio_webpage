@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ali Arfa - AI Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <title>Ali Arfa - AI & Robotics Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #0f172a;
-      --accent-color: #38bdf8;
-      --text-color: #f1f5f9;
-      --muted-color: #94a3b8;
+      --bg-color: #0a0a12;
+      --accent-color: #00f0ff;
+      --secondary-accent: #ff00aa;
+      --text-color: #e0e0ff;
+      --muted-color: #8a8a9a;
+      --neon-glow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
     }
 
     * {
@@ -23,64 +25,159 @@
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Share Tech Mono', monospace;
       animation: fadeIn 1.2s ease-in;
+      background-image: 
+        linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      line-height: 1.6;
     }
 
     header {
       text-align: center;
-      padding: 4rem 1rem 2rem;
+      padding: 4rem 1rem 3rem;
+      border-bottom: 1px solid var(--accent-color);
+      box-shadow: var(--neon-glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-color), var(--secondary-accent));
+      animation: scanline 4s linear infinite;
     }
 
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3.2rem;
       margin-bottom: 0.5rem;
       color: var(--accent-color);
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: var(--neon-glow);
+      letter-spacing: 2px;
     }
 
     header p {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       color: var(--muted-color);
+      margin-bottom: 1.5rem;
     }
 
     section {
-      padding: 2rem 4rem;
+      padding: 2.5rem 4rem;
       max-width: 900px;
       margin: auto;
+      border-left: 1px solid rgba(0, 240, 255, 0.2);
+      position: relative;
+    }
+
+    section::after {
+      content: ">";
+      position: absolute;
+      right: 1rem;
+      top: 2rem;
+      color: var(--secondary-accent);
+      opacity: 0.6;
     }
 
     h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid var(--accent-color);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent-color);
+      font-family: 'Orbitron', sans-serif;
+      position: relative;
       display: inline-block;
+    }
+
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-color), transparent);
     }
 
     ul {
       list-style: none;
-      padding-left: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    ul li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
     }
 
     ul li::before {
-      content: "▹";
-      color: var(--accent-color);
-      margin-right: 0.5rem;
+      content: "■";
+      color: var(--secondary-accent);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.8rem;
+      animation: blink 1.5s infinite;
     }
 
     .socials {
-      margin-top: 1rem;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
     }
 
     .socials a {
-      margin: 0 0.5rem;
       color: var(--accent-color);
       text-decoration: none;
-      font-size: 1.3rem;
-      transition: color 0.3s;
+      font-size: 1.5rem;
+      transition: all 0.3s;
+      padding: 0.5rem;
+      border: 1px solid var(--accent-color);
+      border-radius: 4px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .socials a:hover {
-      color: #facc15;
+      color: var(--bg-color);
+      background: var(--accent-color);
+      box-shadow: 0 0 15px var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      position: relative;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent-color);
+      transition: width 0.3s;
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    strong {
+      color: var(--secondary-accent);
     }
 
     @keyframes fadeIn {
@@ -88,51 +185,140 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 600px) {
-      section { padding: 1rem 2rem; }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    @keyframes scanline {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .cyber-button {
+      background: transparent;
+      color: var(--accent-color);
+      border: 1px solid var(--accent-color);
+      padding: 0.5rem 1rem;
+      font-family: 'Share Tech Mono', monospace;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+      margin-top: 1rem;
+    }
+
+    .cyber-button:hover {
+      background: var(--accent-color);
+      color: var(--bg-color);
+      box-shadow: 0 0 10px var(--accent-color);
+    }
+
+    .cyber-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.4), transparent);
+      transition: all 0.5s;
+    }
+
+    .cyber-button:hover::before {
+      left: 100%;
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 1.5rem 2rem; }
+      header h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.8rem; }
+    }
+
+    @media (max-width: 480px) {
+      section { padding: 1rem 1.5rem; }
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1.1rem; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Ali Arfa</h1>
-    <p>AI Engineer | Edge Computing | Full Stack Dev</p>
+    <h1>ALI ARFA</h1>
+    <p>AI ENGINEER | ROBOTICS | IOT SYSTEMS</p>
     <div class="socials">
-      <a href="https://github.com/aliarfa" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/aliarfa" target="_blank">LinkedIn</a>
-      <a href="mailto:aliarfa@example.com">Email</a>
+      <a href="https://github.com/AliArfa852" target="_blank" title="GitHub">GH</a>
+      <a href="https://www.linkedin.com/in/aliarfa852/" target="_blank" title="LinkedIn">LN</a>
+      <a href="mailto:aliarfa852@gmail.com" title="Email">ML</a>
     </div>
   </header>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a passionate AI and Edge Computing researcher working on real-time embedded systems like the Enhanced Driver Assist (EDA) system. I enjoy building useful tech products and solving real-world problems with code and creativity.</p>
+    <h2>> ABOUT_ME</h2>
+    <p>I'm a cybernetic systems engineer specializing in AI, robotics, and IoT architectures. My work focuses on building intelligent edge systems that bridge the digital and physical worlds. Currently developing next-gen autonomous systems and industrial IoT solutions with real-time neural networks.</p>
+    <p>When not coding, you'll find me hacking robotics prototypes or contributing to open-source AI frameworks.</p>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
+    <h2>> CORE_SKILLS</h2>
     <ul>
-      <li>Python, JavaScript, C++</li>
-      <li>TensorFlow, OpenCV, Flask</li>
-      <li>Embedded Systems, Raspberry Pi, Coral TPU</li>
-      <li>Git, Docker, REST APIs</li>
+      <li><strong>AI/ML:</strong> TensorFlow, PyTorch, Edge TPU, ONNX, Computer Vision</li>
+      <li><strong>Robotics:</strong> ROS, SLAM, Sensor Fusion, Motion Planning</li>
+      <li><strong>IoT:</strong> Embedded Linux, RTOS, BLE/WiFi/5G, MQTT</li>
+      <li><strong>Hardware:</strong> Raspberry Pi, NVIDIA Jetson, Arduino, ESP32</li>
+      <li><strong>Languages:</strong> Python, C++, Rust, CUDA</li>
     </ul>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2>> ACTIVE_PROJECTS</h2>
     <ul>
-      <li><strong>Enhanced Driver Assist (EDA):</strong> Road safety system using CV + OBD</li>
-      <li><strong>Mulazmat.ai:</strong> AI-powered recruitment platform</li>
-      <li><strong>RAG-PDF Chatbot:</strong> Custom chatbot with search + generation</li>
+      <li><strong>Enhanced Driver Assist (EDA):</strong> Vision-based road safety system using CV + OBD-II telemetry with edge AI processing</li>
+      <li><strong>Autonomous Rover Platform:</strong> ROS-based robot with SLAM and computer vision for industrial inspection</li>
+      <li><strong>Smart Factory IoT:</strong> Distributed sensor network with edge AI for predictive maintenance</li>
+      <li><strong>Neural Engine Optimizer:</strong> Toolchain for deploying compressed models to embedded devices</li>
     </ul>
+    <button class="cyber-button">VIEW_ALL_PROJECTS</button>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email me at <a href="mailto:aliarfa@example.com" style="color: var(--accent-color);">aliarfa@example.com</a></p>
+    <h2>> CONNECT</h2>
+    <p>For collaboration or consulting inquiries:</p>
+    <p>Email: <a href="mailto:aliarfa852@gmail.com">aliarfa852@gmail.com</a></p>
+    <p>Signal: +1.234.567.8900</p>
+    <button class="cyber-button">SEND_ENCRYPTED_MESSAGE</button>
   </section>
 
+  <script>
+    // Simple terminal-like typing effect for headers
+    document.addEventListener('DOMContentLoaded', () => {
+      const headers = document.querySelectorAll('h2');
+      headers.forEach(header => {
+        const text = header.textContent;
+        header.textContent = '';
+        let i = 0;
+        const typing = setInterval(() => {
+          if (i < text.length) {
+            header.textContent += text.charAt(i);
+            i++;
+          } else {
+            clearInterval(typing);
+          }
+        }, 50);
+      });
+      
+      // Add glitch effect on hover for social icons
+      const socialIcons = document.querySelectorAll('.socials a');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', () => {
+          icon.style.textShadow = '0 0 5px var(--secondary-accent)';
+        });
+        icon.addEventListener('mouseout', () => {
+          icon.style.textShadow = 'none';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
